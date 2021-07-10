@@ -44,11 +44,11 @@ TagManager:
   - CompanionAI
   - Triggers
   - StopMove
-  - 
+  - Action
   - HeadTrack
   - BodyPart
   - BlockAIRayCast
-  - Pushable
+  - 
   - 
   - 
   - 

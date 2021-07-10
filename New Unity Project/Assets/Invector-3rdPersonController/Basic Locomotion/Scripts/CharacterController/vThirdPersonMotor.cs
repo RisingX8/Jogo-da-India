@@ -466,7 +466,7 @@ namespace Invector.vCharacterController
         public virtual void ReduceStamina(float value, bool accumulative)
         {
             if (accumulative)
-            {
+            {                
                 currentStamina -= value * Time.deltaTime;
             }
             else
@@ -530,7 +530,7 @@ namespace Invector.vCharacterController
             // check how much stamina this action will consume
             if (isSprinting)
             {
-                currentStaminaRecoveryDelay = 0.25f;
+                currentStaminaRecoveryDelay = 1f;
                 ReduceStamina(sprintStamina, true);
             }
         }
