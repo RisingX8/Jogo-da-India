@@ -7,7 +7,7 @@ namespace Invector.vCharacterController
     public partial class vDamageReceiver : vMonoBehaviour, vIAttackReceiver
     {
         public void OnReceiveAttack(vDamage damage, vIMeleeFighter attacker)
-        {       
+        {
             if ((ragdoll && !ragdoll.iChar.isDead))
             {
                 var _damage = ApplyDamageModifiers(damage);

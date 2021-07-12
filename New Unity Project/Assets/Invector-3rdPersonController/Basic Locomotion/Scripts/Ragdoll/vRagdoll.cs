@@ -152,6 +152,7 @@ namespace Invector.vCharacterController
             // store the Animator component
             _parentRigb = GetComponent<Rigidbody>();
             iChar = GetComponent<vICharacter>();
+            //Debug.Log(iChar);
             if (iChar != null)
             {
                 iChar.onActiveRagdoll.AddListener(ActivateRagdoll);
