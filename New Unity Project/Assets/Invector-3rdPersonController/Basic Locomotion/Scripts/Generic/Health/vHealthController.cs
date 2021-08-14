@@ -18,6 +18,7 @@ namespace Invector
         [vHelpBox("If you want to start with different value, uncheck this and make sure that the current health has a value greater zero")]
         public bool fillHealthOnStart = true;
         public int maxHealth = 100;
+        public int ferimentos = 0;
         public int MaxHealth
         {
             get
