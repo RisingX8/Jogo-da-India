@@ -11,10 +11,11 @@ namespace Invector.vCharacterController
         #region Stamina       
 
         [vEditorToolbar("Stamina", order = 2)]
-        public float maxStamina = 200f;
+        public float maxStamina = 100f;
         public float staminaRecovery = 1.2f;
         internal float currentStamina;
         internal float currentStaminaRecoveryDelay;
+        internal float exaustao;
         public float sprintStamina = 30f;
         public float jumpStamina = 30f;
         public float rollStamina = 25f;

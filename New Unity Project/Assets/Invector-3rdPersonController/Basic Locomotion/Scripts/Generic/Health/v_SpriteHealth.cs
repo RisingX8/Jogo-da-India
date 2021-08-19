@@ -50,6 +50,7 @@ namespace Invector.vCharacterController
             if (healthControl == null || healthControl.currentHealth <= 0)
                 Destroy(gameObject);
 
+            _healthSlider.maxValue = healthControl.maxHealth;
             _healthSlider.value = healthControl.currentHealth;
         }
 

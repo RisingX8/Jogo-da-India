@@ -221,7 +221,7 @@ namespace Invector.vCharacterController.AI
             while (this.enabled)
             {
                 CheckIsOnNavMesh();
-                CheckAutoCrouch();
+                //CheckAutoCrouch();
                 yield return new WaitForSeconds(stateRoutineIteration);
                 if (!lockMovement)
                 {

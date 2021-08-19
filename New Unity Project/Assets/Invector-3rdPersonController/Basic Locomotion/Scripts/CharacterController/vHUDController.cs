@@ -10,7 +10,9 @@ namespace Invector.vCharacterController
         #region Health/Stamina Variables
         [Header("Health/Stamina")]
         public Slider healthSlider;
+        //public Slider ferimentosSlider;
         public Slider staminaSlider;
+        //public Slider exaustaoSlider;
         [Header("DamageHUD")]
         public Image damageImage;
         public float flashSpeed = 5f;
@@ -143,18 +145,32 @@ namespace Invector.vCharacterController
 
         void UpdateSliders(vThirdPersonController cc)
         {
+            if(cc.currentHealth <= 20 && damaged)
+            {
+                cc.maxHealth -= 10;
+                cc.ferimentos += 10;
+            }
             if (cc.maxHealth != healthSlider.maxValue)
             {
                 healthSlider.maxValue = Mathf.Lerp(healthSlider.maxValue, cc.maxHealth, 2f * Time.fixedDeltaTime);
                 healthSlider.onValueChanged.Invoke(healthSlider.value);
             }
             healthSlider.value = Mathf.Lerp(healthSlider.value, cc.currentHealth, 2f * Time.fixedDeltaTime);
+            //ferimentosSlider.value = cc.ferimentos;
+
+            if(cc.currentStamina <= 0)
+            {
+                cc.currentStamina = 5;
+                cc.maxStamina -= 10;
+                cc.exaustao += 10;
+            }
             if (cc.maxStamina != staminaSlider.maxValue)
             {
                 staminaSlider.maxValue = Mathf.Lerp(staminaSlider.maxValue, cc.maxStamina, 2f * Time.fixedDeltaTime);
                 staminaSlider.onValueChanged.Invoke(staminaSlider.value);
             }
             staminaSlider.value = cc.currentStamina;
+            //exaustaoSlider.value = cc.exaustao;
         }
 
         public void ShowDamageSprite()
